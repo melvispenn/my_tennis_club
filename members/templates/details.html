@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load tailwind_tags %}
+{% tailwind_css %}
+{% load i18n %}
+
+{% block title %}
+  Details about {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
+
+<body>
+    {% block content%}
+
+<h1>{{mymember.firstname}}{{mymember.lastname}}</h1>
+<p>Phone: {{mymember.phone}}</p>
+<p>Member : {{mymember.joined_date}}</p>
+<p>{% translate "Welcom to the site" %} <a href="/members">back to Members</a></p>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% load tailwind_tags %}
+{% tailwind_css %}
+
+{% block title %}
+  My Tennis Club - List of all members
+{% endblock %}
+
+{% block content%}
+<h1>Members</h1>
+  
+<ul>
+  {% for x in mymembers %}
+    <li><a href="{% url 'details' x.id %}">{{ x.firstname }} {{ x.lastname }}</a></li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}
+{% comment %} 
+</body>
+</html> {% endcomment %}
